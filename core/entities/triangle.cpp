@@ -1,4 +1,5 @@
 #include "triangle.h"
+
 using namespace std;
 
 Triangle::Triangle(Engine& eng) : engine(eng){
