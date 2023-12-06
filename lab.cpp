@@ -1,7 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
-#include "triangle.h"
+#include "core/entities/triangle.h"
 #include "reader.cpp"
 #ifndef ENGINE_H
 #define ENGINE_H
