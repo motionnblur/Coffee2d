@@ -6,7 +6,6 @@ using namespace std;
 class Engine
 {
 public:
-	Engine();
 	void AddVertexToPool(vector<float>&);
 	void ChangeVertices(vector<float>&);
 	void AddVertexCountToPool(int);

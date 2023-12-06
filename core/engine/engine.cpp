@@ -4,8 +4,6 @@
 
 using namespace std;
 
-Engine::Engine(){}
-
 void print(std::vector <float> &a) {
    std::cout << "The vector elements are : ";
 
