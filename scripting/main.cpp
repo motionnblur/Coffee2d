@@ -2,7 +2,6 @@
 
 int main()
 {
-    InitEngine();
     InitGlfw();
     InitWindow(800, 600, "MESA");
     InitOpengl();

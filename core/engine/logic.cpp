@@ -34,11 +34,6 @@ void errorCallback(int error, const char* description)
     fprintf(stderr, "Error: %s\n", description);
 }
 
-void InitEngine()
-{
-    //_engine = new Engine;
-}
-
 int InitGlfw()
 {
     glfwSetErrorCallback(errorCallback);
