@@ -12,7 +12,6 @@ GLFWwindow* window;
 
 GLuint VBO;
 GLuint VAO;
-GLuint EBO;
 
 GLuint vertexShader;
 GLuint fragmentShader;
