@@ -134,7 +134,7 @@ void Update(const std::function<void()>& LoopFunction)
 void MainLoop()
 {
     Update([](){
-        //triangle.UpdatePos(0.0002, 0.0001, shader_program, VAO);
+        triangle.UpdatePos(-0.0002, 0.00, shader_program, VAO);
         triangle2.UpdatePos(-0.0002, 0.0, shader_program, VAO);
     });
 }
