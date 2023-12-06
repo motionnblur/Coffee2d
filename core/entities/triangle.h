@@ -4,7 +4,6 @@
 using namespace std;
 
 class Triangle{
-
 	public:
 		Triangle(Engine& eng);
 
