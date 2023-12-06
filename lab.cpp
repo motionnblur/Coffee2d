@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include "core/entities/triangle.h"
-#include "reader.cpp"
+#include "./lib/reader.cpp"
 #ifndef ENGINE_H
 #define ENGINE_H
 #endif
