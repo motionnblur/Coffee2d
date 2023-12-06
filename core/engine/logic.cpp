@@ -94,7 +94,7 @@ void InitOpengl()
         vertexShader, fragmentShader, shader_program);
 
     triangle2.SetSize(0.1);
-    triangle2.SetPos(0.5, 0.0);
+    triangle2.SetPos(0.0, 0.0);
 
     triangle2.SendTriangleDataToEngine(VBO, VAO);
 
@@ -135,6 +135,6 @@ void MainLoop()
 {
     Update([](){
         triangle.UpdatePos(-0.0002, 0.00, shader_program, VAO);
-        triangle2.UpdatePos(-0.0002, 0.0, shader_program, VAO);
+        triangle2.UpdatePos(+0.0002, 0.0, shader_program, VAO);
     });
 }
