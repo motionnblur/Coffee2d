@@ -23,6 +23,7 @@ Engine _engine;
 
 Triangle triangle(_engine);
 Triangle triangle2(_engine);
+Triangle triangle3(_engine);
 
 /***************************************************************************************/
 
@@ -89,6 +90,16 @@ void InitOpengl()
 
     triangle2.SendTriangleDataToEngine(VBO, VAO);
 
+    triangle3.Init(_engine);
+
+    triangle3.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
+        vertexShader, fragmentShader, shader_program);
+
+    triangle3.SetSize(0.1);
+    triangle3.SetPos(0.0, 0.0);
+
+    triangle3.SendTriangleDataToEngine(VBO, VAO);
+
     _engine.Update(VBO, VAO);
 
     glfwGetFramebufferSize(window, &w_width, &w_height);
@@ -127,5 +138,6 @@ void MainLoop()
     Update([](){
         triangle.UpdatePos(-0.0002, 0.00, shader_program, VAO);
         triangle2.UpdatePos(+0.0002, 0.0, shader_program, VAO);
+        triangle3.UpdatePos(0.0, +0.0005, shader_program, VAO);
     });
 }
