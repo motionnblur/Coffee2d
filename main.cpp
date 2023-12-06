@@ -1,4 +1,4 @@
-#include "lab.cpp"
+#include "logic.cpp"
 
 int main()
 {
