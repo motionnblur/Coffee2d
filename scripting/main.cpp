@@ -1,4 +1,4 @@
-#include "./core/engine/logic.cpp"
+#include "../core/engine/logic.cpp"
 
 int main()
 {
