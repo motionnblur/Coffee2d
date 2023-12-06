@@ -80,7 +80,7 @@ void InitOpengl()
 {
     triangle.Init(_engine);
 
-    triangle.InitShaders(ReadFile("vert.shader"), ReadFile("frag.shader"), 
+    triangle.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
         vertexShader, fragmentShader, shader_program);
 
     triangle.SetSize(0.1);
@@ -90,7 +90,7 @@ void InitOpengl()
 
     triangle2.Init(_engine);
 
-    triangle2.InitShaders(ReadFile("vert.shader"), ReadFile("frag.shader"), 
+    triangle2.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
         vertexShader, fragmentShader, shader_program);
 
     triangle2.SetSize(0.1);
