@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include "../entities/triangle.h"
 #include "../../lib/reader.cpp"
-#ifndef ENGINE_H
-#define ENGINE_H
-#endif
 #include <functional>
 
 GLFWwindow* window;
