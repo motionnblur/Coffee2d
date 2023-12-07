@@ -6,7 +6,10 @@ int main()
     InitWindow(800, 600, "MESA");
     InitOpengl();
 
-    MainLoop();
+    Update([](){
+        triangle.UpdatePos(-0.0002, 0.00);
+        triangle2.UpdatePos(+0.0002, 0.00);
+    });
 
     QuitOpengl();
     glfwDestroyWindow(window);

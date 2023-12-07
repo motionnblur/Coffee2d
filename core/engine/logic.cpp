@@ -106,11 +106,3 @@ void Update(const std::function<void()>& LoopFunction)
         UpdateScreen();
     }
 }
-
-void MainLoop()
-{
-    Update([](){
-        triangle.UpdatePos(-0.0002, 0.00);
-        triangle2.UpdatePos(+0.0002, 0.00);
-    });
-}
