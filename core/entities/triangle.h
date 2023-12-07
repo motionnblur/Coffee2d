@@ -8,6 +8,7 @@ using namespace std;
 class Triangle{
 	public:
 		Triangle(Engine& eng);
+		~Triangle(){}
 
 		void Init(Engine& en);
 		void InitShaders(const char*, const char*, GLuint&, GLuint&, GLuint&);
