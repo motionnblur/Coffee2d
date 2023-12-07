@@ -28,7 +28,7 @@ void Engine::ChangeVertices(vector<float> &data)
 	//vertex = data;
 }
 
-void Engine::Update(GLuint &VBO, GLuint &VAO)
+void Engine::Update()
 {
 	vector<float> vertexArrVect = GetVertexFromPool();
     float *vertices = &vertexArrVect[0];

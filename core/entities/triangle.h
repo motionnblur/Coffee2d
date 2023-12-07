@@ -1,6 +1,7 @@
 #include <vector>
 #include "../engine/engine.h"
 #include <cstddef>
+#include "../../lib/reader.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ class Triangle{
 		void Init(Engine& en);
 		void InitShaders(const char*, const char*, GLuint&, GLuint&, GLuint&);
 		void SetPos(float, float);
-		void UpdatePos(float, float, GLuint&, GLuint&);
+		void UpdatePos(float, float);
 		void SetVerticlePos(vector<float>);
 		void SetFragmentVal(vector<float>);
 		void SetSize(float);
@@ -25,4 +26,10 @@ class Triangle{
 		vector<float> verticle_pos;
 		vector<float> fragment_val;
 		Engine& engine;
+
+		GLuint vertexShader;
+		GLuint fragmentShader;
+		GLuint shader_program;
+		GLuint VBO;
+		GLuint VAO;
 };

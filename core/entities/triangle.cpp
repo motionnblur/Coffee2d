@@ -32,6 +32,11 @@ void Triangle::Init(Engine& en)
 	vector<float> vertexArrVect = GetVerticlePos();
 	verticle_pos = vertexArrVect;
 	engine = en;
+
+	InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
+        vertexShader, fragmentShader, shader_program);
+
+	SendTriangleDataToEngine(VBO, VAO);
 }
 
 void Triangle::SendTriangleDataToEngine(GLuint VBO, GLuint VAO)
@@ -78,7 +83,7 @@ void Triangle::SetPos(float x, float y)
 	verticle_pos = verticles;
 }
 
-void Triangle::UpdatePos(float x, float y, GLuint& shdrProgram, GLuint& VAO)
+void Triangle::UpdatePos(float x, float y)
 {
 	verticle_pos[0] += x;
 	verticle_pos[1] += y;
@@ -90,7 +95,7 @@ void Triangle::UpdatePos(float x, float y, GLuint& shdrProgram, GLuint& VAO)
 	verticle_pos[5] += y;
 
 	engine.ChangeVertices(verticle_pos);
-	engine.Draw(shdrProgram, VAO);
+	engine.Draw(shader_program, VAO);
 }
 
 void Triangle::SetVerticlePos(vector<float> val){

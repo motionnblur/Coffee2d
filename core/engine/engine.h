@@ -10,7 +10,7 @@ public:
 	void ChangeVertices(vector<float>&);
 	void AddVertexCountToPool(int);
 	void IncreaseTriangleCount();
-	void Update(GLuint&, GLuint&);
+	void Update();
 	void Draw(GLuint&, GLuint&);
 	
 	vector<float> GetVertexFromPool();
@@ -19,4 +19,7 @@ private:
 	int vertex_count;
 	int triangle_count;
 	vector<float> vertex;
+	
+	GLuint VBO;
+	GLuint VAO;
 };

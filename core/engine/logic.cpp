@@ -2,13 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include "../entities/triangle.h"
-#include "../../lib/reader.cpp"
 #include <functional>
 
 GLFWwindow* window;
 
-GLuint VBO;
-GLuint VAO;
 
 GLuint vertexShader;
 GLuint fragmentShader;
@@ -23,7 +20,6 @@ Engine _engine;
 
 Triangle triangle(_engine);
 Triangle triangle2(_engine);
-Triangle triangle3(_engine);
 
 /***************************************************************************************/
 
@@ -71,36 +67,14 @@ int Close()
 void InitOpengl()
 {
     triangle.Init(_engine);
-
-    triangle.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
-        vertexShader, fragmentShader, shader_program);
-
     triangle.SetSize(0.1);
     triangle.SetPos(0.0, 0.0);
 
-    triangle.SendTriangleDataToEngine(VBO, VAO);
-
     triangle2.Init(_engine);
-
-    triangle2.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
-        vertexShader, fragmentShader, shader_program);
-
     triangle2.SetSize(0.1);
     triangle2.SetPos(0.0, 0.0);
 
-    triangle2.SendTriangleDataToEngine(VBO, VAO);
-
-    triangle3.Init(_engine);
-
-    triangle3.InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
-        vertexShader, fragmentShader, shader_program);
-
-    triangle3.SetSize(0.1);
-    triangle3.SetPos(0.0, 0.0);
-
-    triangle3.SendTriangleDataToEngine(VBO, VAO);
-
-    _engine.Update(VBO, VAO);
+    _engine.Update();
 
     glfwGetFramebufferSize(window, &w_width, &w_height);
     glViewport(0, 0, w_width, w_height);
@@ -136,8 +110,7 @@ void Update(const std::function<void()>& LoopFunction)
 void MainLoop()
 {
     Update([](){
-        triangle.UpdatePos(-0.0002, 0.00, shader_program, VAO);
-        triangle2.UpdatePos(+0.0002, 0.0, shader_program, VAO);
-        triangle3.UpdatePos(0.0, +0.0005, shader_program, VAO);
+        triangle.UpdatePos(-0.0002, 0.00);
+        triangle2.UpdatePos(+0.0002, 0.00);
     });
 }
