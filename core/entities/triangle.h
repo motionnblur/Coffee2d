@@ -10,7 +10,7 @@ class Triangle{
 		Triangle(Engine& eng);
 		~Triangle(){}
 
-		void Init(Engine& en);
+		void Create();
 		void InitShaders(const char*, const char*, GLuint&, GLuint&, GLuint&);
 		void SetPos(float, float);
 		void UpdatePos(float, float);

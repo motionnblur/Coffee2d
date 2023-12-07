@@ -27,11 +27,10 @@ float Triangle::GetSize()
 	return size;
 }
 
-void Triangle::Init(Engine& en)
+void Triangle::Create()
 {
 	vector<float> vertexArrVect = GetVerticlePos();
 	verticle_pos = vertexArrVect;
-	engine = en;
 
 	InitShaders(ReadFile("shaders/vert.shader"), ReadFile("shaders/frag.shader"), 
         vertexShader, fragmentShader, shader_program);

@@ -10,11 +10,11 @@ int main()
     InitOpengl();
 
     InitObjects([](){
-        triangle.Init(_engine);
+        triangle.Create();
         triangle.SetSize(0.1);
         triangle.SetPos(0.0, 0.0);
 
-        triangle2.Init(_engine);
+        triangle2.Create();
         triangle2.SetSize(0.1);
         triangle2.SetPos(0.0, 0.0);
     });
