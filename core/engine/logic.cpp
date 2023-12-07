@@ -18,9 +18,6 @@ float _x = 0;
 
 Engine _engine;
 
-Triangle triangle(_engine);
-Triangle triangle2(_engine);
-
 /***************************************************************************************/
 
 void errorCallback(int error, const char* description)
@@ -66,16 +63,6 @@ int Close()
 
 void InitOpengl()
 {
-    triangle.Init(_engine);
-    triangle.SetSize(0.1);
-    triangle.SetPos(0.0, 0.0);
-
-    triangle2.Init(_engine);
-    triangle2.SetSize(0.1);
-    triangle2.SetPos(0.0, 0.0);
-
-    _engine.Update();
-
     glfwGetFramebufferSize(window, &w_width, &w_height);
     glViewport(0, 0, w_width, w_height);
 }
@@ -95,6 +82,12 @@ void QuitOpengl()
 {
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+void InitObjects(const std::function<void()>& InitCode)
+{
+    InitCode();
+    _engine.Update();
 }
 
 void Update(const std::function<void()>& LoopFunction)
